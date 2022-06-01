@@ -42,8 +42,12 @@ namespace SujaySarma.Sdk.WikipediaApi
             {
                 RequestUri = new Uri(uri.ToString())
             };
-            client.RequestHeaders.Add("User-Agent", apiUserContactEmail);
-            client.RequestHeaders.Add("Api-User-Agent", apiUserContactEmail);
+
+            if (!string.IsNullOrWhiteSpace(apiUserContactEmail))
+            {
+                client.RequestHeaders.Add("User-Agent", apiUserContactEmail);
+                client.RequestHeaders.Add("Api-User-Agent", apiUserContactEmail);
+            }
             client.RequestHeaders.Add("Accept", "application/json");
 
             if ((headers != null) && (headers.Count > 0))
@@ -76,10 +80,10 @@ namespace SujaySarma.Sdk.WikipediaApi
         /// <summary>
         /// Initialize
         /// </summary>
-        /// <param name="emailAddress">E-mail address to use in Wikipedia API headers (mandatory!)</param>
+        /// <param name="emailAddress">E-mail address to use in Wikipedia API headers</param>
         public WikipediaClient(string? emailAddress)
         {
-            apiUserContactEmail = emailAddress ?? "nobody@example.com";
+            apiUserContactEmail = emailAddress;
         }
 
         /// <summary>
@@ -88,6 +92,6 @@ namespace SujaySarma.Sdk.WikipediaApi
         protected static readonly string ENDPOINT_BASE_URI = "https://en.wikipedia.org/api/rest_v1";
 
         // used from AddHeaders()
-        private readonly string apiUserContactEmail;
+        private readonly string? apiUserContactEmail;
     }
 }
