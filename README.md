@@ -6,7 +6,10 @@ This is a .NET client, written in .NET Core 3.0, C#, to talk to the Wikipedia RE
 The aim is to support all the operations that the REST endpoints support. 
 
 ## Current status
-Version 1.0
+Version 6.2.5
+
+## NuGet Package
+https://www.nuget.org/packages/SujaySarma.Sdk.WikipediaApi
 
 ## Developer documentation
 
