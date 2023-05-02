@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>Sujay V Sarma</Authors>
+    <Company>Sujay V Sarma</Company>
+    <Description>.NET Client for Wikipedia.org REST API. The client will be updated regularly to support all the operations that the REST endpoints support. If you come across missing features or bugs, do open an issue on Github and it will be addressed quickly.</Description>
+    <Copyright>Copyright © 2022 Sujay V. Sarma. All Rights Reserved.</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/sujayvsarma/SujaySarma.Sdk.RESTClient.Wikipedia</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/sujayvsarma/SujaySarma.Sdk.RESTClient.Wikipedia</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>sdk,wikipedia,rest,rest api,client</PackageTags>
+    <Version>6.2.5</Version>
+    <PackageReleaseNotes>Updated RestApiClient dependency to 6.2.*, updated calling methods as appropriate.</PackageReleaseNotes>
+    <AssemblyVersion>6.2.5.0</AssemblyVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <CodeAnalysisRuleSet />
+    <WarningsAsErrors>NU1605</WarningsAsErrors>
+    <NoWarn>1701;1702;NU5104</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CodeAnalysisRuleSet />
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove=".gitattributes" />
+    <None Remove=".gitignore" />
+    <None Remove="README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SujaySarma.Sdk.RestApi" Version="6.2.*" />
+  </ItemGroup>
+</Project>
